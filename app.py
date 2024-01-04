@@ -82,8 +82,6 @@ def main():
     class_names = ['edible', 'poisonous']
     classifier = st.sidebar.selectbox("Select Classifier", ("Support Vector Machine (SVM)", "Logistic Regression", "Random Forest"))
 
-    st.write(x_train)
-
     if classifier == 'Support Vector Machine (SVM)':
         C = st.sidebar.number_input("C (Regularization Parameter)", 0.01, 10.0, step=0.01, key='C_SVM')
         kernel = st.sidebar.radio("Kernel",("rbf", "linear"), key='kernel')
