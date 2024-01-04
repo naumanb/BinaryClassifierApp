@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][screenshot]](https://binaryclassifer.streamlit.app)
+[![App Screenshot][product-screenshot]](https://binaryclassifer.streamlit.app)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
