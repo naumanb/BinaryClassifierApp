@@ -136,5 +136,11 @@ def main():
         st.subheader("Mushroom Data Set (Classification)")
         st.write(df)
 
+    myurl = "https://www.github.com/naumanb"
+    st.markdown(
+        " Developed by [Nauman Baig](%s) % myurl"
+    )
+
+
 if __name__ == "__main__":
     main()
