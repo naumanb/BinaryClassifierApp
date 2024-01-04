@@ -32,7 +32,7 @@
 <h3 align="center">Binary Classification Web App</h3>
 
   <p align="center">
-    An interactive web application for showcasing various classifiers for binary classifications. The project includes classifiers such as Support Vector Machine (SVM), Logistic Regression, and Random Forest, allowing users to classify mushrooms as either edible or poisonous. App was developed within Github Codespaces with Streamlit integration.
+    An interactive web application for showcasing various classifiers for binary classifications. The project includes classifiers such as Support Vector Machine (SVM), Logistic Regression, and Random Forest, allowing users to classify datasets with binary class values. App was developed within Github Codespaces with Streamlit integration.
     <br />
     <a href="https://github.com/naumanb/BinaryClassifierApp"><strong>Explore the docs »</strong></a>
     <br />
