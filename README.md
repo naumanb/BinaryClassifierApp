@@ -37,7 +37,7 @@
 <h3 align="center">Binary Classification Web App</h3>
 
   <p align="center">
-    An interactive web application for showcasing various classifiers for binary classifications. The project includes classifiers such as Support Vector Machine (SVM), Logistic Regression, and Random Forest, allowing users to classify mushrooms as either edible or poisonous.
+    An interactive web application for showcasing various classifiers for binary classifications. The project includes classifiers such as Support Vector Machine (SVM), Logistic Regression, and Random Forest, allowing users to classify mushrooms as either edible or poisonous. App was developed within Github Codespaces with Streamlit integration.
     <br />
     <a href="https://github.com/naumanb/BinaryClassifierApp"><strong>Explore the docs »</strong></a>
     <br />
@@ -105,55 +105,57 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get your own copy setup and running on streamlit, follow the steps below.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1. Setup your Python development environemt
+  * Create a project folder and navigate to it on Powershell or Terminal
+  * Setup a virtual environment & activate it (python -m venv venv)
+2. Install Streamlit
+  * npm
+    ```sh
+    pip install streamlit
+    ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/naumanb/BinaryClassifierApp.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+1. Modify 'app.py' according to your needs
+2. Run streamlit
+   ```sh
+   streamlit app.py [-- script args]
+   ```
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Data preprocessing
+  - [ ] Upload custom data
+  - [ ] Change data parameters (labels, remove data points, etc.)
+- [ ] Additional classifiers
+  - [ ] k-Nearest Neighbours
+  - [ ] Decision Trees
+  - [ ] Neural Nets
+- [ ] Additional metrics
 
 See the [open issues](https://github.com/naumanb/BinaryClassifierApp/issues) for a full list of proposed features (and known issues).
 
@@ -191,7 +193,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - heybaig@gmail.com
+Nauman Baig - heybaig@gmail.com
 
 Project Link: [https://github.com/naumanb/BinaryClassifierApp](https://github.com/naumanb/BinaryClassifierApp)
 
@@ -201,10 +203,6 @@ Project Link: [https://github.com/naumanb/BinaryClassifierApp](https://github.co
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-* []()
-* []()
-* []()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -225,19 +223,3 @@ Project Link: [https://github.com/naumanb/BinaryClassifierApp](https://github.co
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/https://www.linkedin.com/in/naumanb
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
