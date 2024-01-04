@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import streamlit as st
+
 from streamlit.logger import get_logger
 import pandas as pd
 import numpy as np
@@ -24,6 +25,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import ConfusionMatrixDisplay, RocCurveDisplay, PrecisionRecallDisplay
 from sklearn.metrics import precision_score, recall_score
 import matplotlib.pyplot as plt
+from ucimlrepo import fetch_ucirepo 
 
 LOGGER = get_logger(__name__)
 
@@ -34,26 +36,29 @@ def main():
         page_icon="👋",
     )
 
-    st.write("# Binary Classification Web App")
+    st.write("# Binary Classification App")
     st.sidebar.title("Configuration")
 
-    st.markdown(
-        "Classifying mushrooms as either edible or poisonous 🍄"
-    )
+    dataset = st.selectbox("Select dataset (UCI ML Directory)",("Mushroom","Spambase","Congressional Voting Records", "Breast Cancer Wisconsin (Original)"))
 
     st.cache_data(persist=True)
-    def load_data():
-        data = pd.read_csv('mushrooms.csv')
-        label = LabelEncoder()
-        for col in data.columns:
-            data[col] = label.fit_transform(data[col])
-        return data
-    
-    @st.cache_data(persist=True)
-    def split(df):
-        y = df.type
-        x = df.drop(columns=['type'])
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3,random_state=0)
+    def load_data(dataset):
+        rawdata = fetch_ucirepo(name=dataset)
+        original = rawdata.data.original
+        features = rawdata.data.features
+        target = rawdata.data.targets
+
+        st.write(rawdata.metadata.abstract)
+
+        new = features.merge(target, left_index=True, right_index=True).dropna()
+        new = new.apply(LabelEncoder().fit_transform)
+        features = new.iloc[:,:-1]
+        target = new.iloc[:,-1:]
+
+        return original,features,target
+
+    def split(X,y):
+        x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.3,random_state=0)
         return x_train, x_test, y_train, y_test
     
     def plot_metrics(metrics_list):
@@ -72,11 +77,12 @@ def main():
             PrecisionRecallDisplay.from_estimator(model, x_test, y_test)
             st.pyplot()
 
-    df = load_data()
-    x_train, x_test, y_train, y_test = split(df)
+    original,features,targets = load_data(dataset)
+    x_train, x_test, y_train, y_test = split(features,targets)
     class_names = ['edible', 'poisonous']
     classifier = st.sidebar.selectbox("Select Classifier", ("Support Vector Machine (SVM)", "Logistic Regression", "Random Forest"))
 
+    st.write(x_train)
 
     if classifier == 'Support Vector Machine (SVM)':
         C = st.sidebar.number_input("C (Regularization Parameter)", 0.01, 10.0, step=0.01, key='C_SVM')
@@ -133,13 +139,15 @@ def main():
 
 
     if st.sidebar.checkbox("Show raw data", False):
-        st.subheader("Mushroom Data Set (Classification)")
-        st.write(df)
+        st.subheader("Data Set")
+        st.write(original)
 
     myurl = "https://www.github.com/naumanb"
     st.markdown(
-        " Developed by [Nauman Baig](%s) % myurl"
+        " Developed by [Nauman Baig](%s)" % myurl
     )
+
+    st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 if __name__ == "__main__":
