@@ -37,7 +37,7 @@
     <a href="https://github.com/naumanb/BinaryClassifierApp"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="binaryclassifier.streamlit.app">View Demo</a>
+    <a href="https://binaryclassifier.streamlit.app">View Demo</a>
     ·
     <a href="https://github.com/naumanb/BinaryClassifierApp/issues">Report Bug</a>
     ·
